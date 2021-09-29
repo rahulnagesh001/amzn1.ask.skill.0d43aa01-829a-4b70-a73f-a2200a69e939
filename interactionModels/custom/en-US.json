@@ -1,0 +1,625 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "food recall",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "SetFoodIntent",
+          "slots": [
+            {
+              "name": "food",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "where",
+              "type": "where"
+            },
+            {
+              "name": "homemade",
+              "type": "AMAZON.FoodEstablishment",
+              "samples": [
+                "mcdonalds",
+                "homemade"
+              ]
+            },
+            {
+              "name": "details",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "all",
+              "type": "yesNo",
+              "samples": [
+                "no",
+                "yes"
+              ]
+            }
+          ],
+          "samples": [
+            "{all}",
+            "The details are {details}",
+            "{homemade}",
+            "{where}",
+            " {food}"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "SetMealIntent",
+          "slots": [
+            {
+              "name": "meal",
+              "type": "meal"
+            },
+            {
+              "name": "time",
+              "type": "AMAZON.TIME"
+            },
+            {
+              "name": "source",
+              "type": "where"
+            },
+            {
+              "name": "activity",
+              "type": "activity"
+            },
+            {
+              "name": "companion",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "{companion}",
+            "{activity}",
+            "{source}",
+            "{time}",
+            "{meal}"
+          ]
+        },
+        {
+          "name": "forgottenFoodIntent",
+          "slots": [
+            {
+              "name": "beverages",
+              "type": "yesNo",
+              "samples": [
+                "no",
+                "yes"
+              ]
+            },
+            {
+              "name": "sweet",
+              "type": "yesNo"
+            },
+            {
+              "name": "snack",
+              "type": "yesNo"
+            },
+            {
+              "name": "fruits",
+              "type": "yesNo"
+            },
+            {
+              "name": "breads",
+              "type": "yesNo"
+            },
+            {
+              "name": "supplements",
+              "type": "yesNo"
+            }
+          ],
+          "samples": [
+            "{beverages}"
+          ]
+        },
+        {
+          "name": "otherIntent",
+          "slots": [
+            {
+              "name": "quantity",
+              "type": "quantity"
+            },
+            {
+              "name": "view",
+              "type": "yesNo"
+            }
+          ],
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "dinner"
+              }
+            },
+            {
+              "name": {
+                "value": "lunch"
+              }
+            },
+            {
+              "name": {
+                "value": "breakfast"
+              }
+            }
+          ],
+          "name": "meal"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "computer"
+              }
+            },
+            {
+              "name": {
+                "value": "t.v."
+              }
+            }
+          ],
+          "name": "activity"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "outside"
+              }
+            },
+            {
+              "name": {
+                "value": "home"
+              }
+            }
+          ],
+          "name": "where"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "yes"
+              }
+            },
+            {
+              "name": {
+                "value": "no"
+              }
+            }
+          ],
+          "name": "yesNo"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "far less"
+              }
+            },
+            {
+              "name": {
+                "value": "usual"
+              }
+            },
+            {
+              "name": {
+                "value": "much less"
+              }
+            },
+            {
+              "name": {
+                "value": "much more"
+              }
+            }
+          ],
+          "name": "quantity"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SetFoodIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.716736654258.631246181983"
+              }
+            },
+            {
+              "name": "where",
+              "type": "where",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.131602032750.1484087342312"
+              }
+            },
+            {
+              "name": "homemade",
+              "type": "AMAZON.FoodEstablishment",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.131602032750.504649111203"
+              }
+            },
+            {
+              "name": "details",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.131602032750.1144420733214"
+              }
+            },
+            {
+              "name": "all",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1570222958588.1226254898979"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SetMealIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "meal",
+              "type": "meal",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "time",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.673434798264.708804769066"
+              }
+            },
+            {
+              "name": "source",
+              "type": "where",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "activity",
+              "type": "activity",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.673434798264.1388115098235"
+              }
+            },
+            {
+              "name": "companion",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.673434798264.1197303660364"
+              }
+            }
+          ]
+        },
+        {
+          "name": "forgottenFoodIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "beverages",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.367807587887.203736714965"
+              }
+            },
+            {
+              "name": "sweet",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1326685456424.415562008985"
+              }
+            },
+            {
+              "name": "snack",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1326685456424.680472589040"
+              }
+            },
+            {
+              "name": "fruits",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1326685456424.36305211946"
+              }
+            },
+            {
+              "name": "breads",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1326685456424.447566868203"
+              }
+            },
+            {
+              "name": "supplements",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1326685456424.78888436598"
+              }
+            }
+          ]
+        },
+        {
+          "name": "otherIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "quantity",
+              "type": "quantity",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1234921274352.921705311734"
+              }
+            },
+            {
+              "name": "view",
+              "type": "yesNo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1234921274352.763996915630"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.716736654258.882070740460",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which meal do you want to report?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.716736654258.631246181983",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what did you eat?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.131602032750.1484087342312",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where did you get this food ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.131602032750.504649111203",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Was this food homemade or where was it purchased?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.131602032750.1144420733214",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Can you provide more details of this food?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.673434798264.708804769066",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "When did you eat the meal?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.673434798264.1388115098235",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you watch TV or use computer while eating the meal?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.673434798264.1197303660364",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you eat the meal with someone else, Who were they?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.367807587887.203736714965",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you have any water, coffee, tea, soft drinks, milk, juice, beer, wine?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1570222958588.1226254898979",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Have you entered all your foods and drinks?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1326685456424.415562008985",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you have cookies, candy, ice cream or other sweets?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1326685456424.680472589040",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you have chips, crackers, popcorn, pretzels, nuts or other snack foods?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1326685456424.36305211946",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you have fruits, vegetables or cheeses?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1326685456424.447566868203",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you have breads, rolls or tortillas?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1326685456424.78888436598",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you have supplements?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.362448183934.196489285356",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you eat much more, usual, or much less than usual?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.362448183934.299169544069",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like to view your nutrition profile for the day you just reported on?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1234921274352.763996915630",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like to view your nutrition profile for the day you just reported on?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1234921274352.921705311734",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Did you eat much more, usual, or much less than usual?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "57"
+}
